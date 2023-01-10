@@ -7,17 +7,16 @@
 import Foundation
 
 // MARK: - News
-struct News: Codable {
-    let success: Bool
-    let result: [NewsResult]
+struct News: Decodable {
+    let status: String
+     let totalResults: Int
+     let articles: [NewsResult]
 }
 
 
 // MARK: - ResultClass
-struct NewsResult: Codable {
-    let key: String
-    let url: String
-    let description: String
-    let image: String
-    let name, source: String
+struct NewsResult: Decodable {
+     let title, description: String
+     let url: String
+     let urlToImage: String
 }

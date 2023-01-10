@@ -13,6 +13,11 @@ class Network {
     
     static let shared = Network()
     
+    func fetchData(completion:@escaping(News?,Error?)->()) {
+        fetchGeneric(urlString: Endpoints.topHeadlineTR.stringUrl, completion: completion)
+    }
+    
+    
     func fetchGeneric<T:Decodable>(urlString:String, completion: @escaping (T?,Error?) -> ()) {
         guard let url = URL(string: urlString) else { return }
         

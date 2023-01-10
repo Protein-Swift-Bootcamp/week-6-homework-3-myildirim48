@@ -11,9 +11,9 @@ struct secretKey {
 }
 
 
-let topHeadlines : String = "top-headlines"
-let country : String = "country=tr"
+let topHeadlines : String = "top-headlines?"
+let country : String = "country=tr&"
 
-let apiKey : String = "apiKey"
+let apiKey : String = "apiKey="
 
 let photoCellid : String = "photoCellID"

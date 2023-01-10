@@ -18,7 +18,9 @@ class PhotoCellController: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        conteinerView.layer.cornerRadius = 6
+        imageView.layer.cornerRadius = 10
+//        imageView.clipsToBounds = true
+        conteinerView.layer.cornerRadius = 10
         conteinerView.layer.masksToBounds = true
     }
     
@@ -26,11 +28,11 @@ class PhotoCellController: UICollectionViewCell {
         didSet {
             if let newsResult  {
                 
-                if let imgUrl = URL(string: newsResult.image) {
+                if let imgUrl = URL(string: newsResult.urlToImage) {
                     imageView.imageFrom(url: imgUrl)
                 }
                 
-                titleLabel.text = newsResult.name
+                titleLabel.text = newsResult.title
                 descriptionLabel.text = newsResult.description
             }
         }

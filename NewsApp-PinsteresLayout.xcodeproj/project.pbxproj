@@ -17,7 +17,6 @@
 		749BC103296D6B7A008A3976 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BC102296D6B7A008A3976 /* Network.swift */; };
 		749BC106296D90A1008A3976 /* Apikey+UrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BC105296D90A1008A3976 /* Apikey+UrlConstants.swift */; };
 		749BC108296D9205008A3976 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BC107296D9205008A3976 /* Endpoints.swift */; };
-		749BC10A296D988D008A3976 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BC109296D988D008A3976 /* Responses.swift */; };
 		749BC10C296D9AAD008A3976 /* PhotoCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BC10B296D9AAD008A3976 /* PhotoCellController.swift */; };
 		749BC10F296DA11C008A3976 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BC10E296DA11C008A3976 /* UIImageView+Extensions.swift */; };
 		749BC111296DA140008A3976 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BC110296DA140008A3976 /* UIView+Extensions.swift */; };
@@ -36,7 +35,6 @@
 		749BC102296D6B7A008A3976 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		749BC105296D90A1008A3976 /* Apikey+UrlConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Apikey+UrlConstants.swift"; sourceTree = "<group>"; };
 		749BC107296D9205008A3976 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		749BC109296D988D008A3976 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
 		749BC10B296D9AAD008A3976 /* PhotoCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellController.swift; sourceTree = "<group>"; };
 		749BC10E296DA11C008A3976 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		749BC110296DA140008A3976 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 				749BC102296D6B7A008A3976 /* Network.swift */,
 				749BC105296D90A1008A3976 /* Apikey+UrlConstants.swift */,
 				749BC107296D9205008A3976 /* Endpoints.swift */,
-				749BC109296D988D008A3976 /* Responses.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -208,7 +205,6 @@
 				749BC106296D90A1008A3976 /* Apikey+UrlConstants.swift in Sources */,
 				749BC10C296D9AAD008A3976 /* PhotoCellController.swift in Sources */,
 				749BC108296D9205008A3976 /* Endpoints.swift in Sources */,
-				749BC10A296D988D008A3976 /* Responses.swift in Sources */,
 				749BC103296D6B7A008A3976 /* Network.swift in Sources */,
 				749BC0E8296D6AAF008A3976 /* AppDelegate.swift in Sources */,
 				749BC0EA296D6AAF008A3976 /* SceneDelegate.swift in Sources */,
