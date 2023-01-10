@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewsApp_PinsteresLayout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A2e-2g-P9I">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="n1R-fE-bdu">
+                                    <size key="itemSize" width="182" height="236"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCellID" id="S5u-Wc-7mD" customClass="PhotoCellController" customModule="NewsApp_PinsteresLayout" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="182" height="236"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jt0-Lj-uKt">
+                                            <rect key="frame" x="0.0" y="0.0" width="182" height="236"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YBD-Q8-32l">
+                                                    <rect key="frame" x="5" y="5" width="172" height="188.33333333333334"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gep-QD-3o4">
+                                                    <rect key="frame" x="8" y="198.33333333333334" width="169" height="16.666666666666657"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="255" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hj6-mM-ZI8">
+                                                    <rect key="frame" x="5" y="220" width="172" height="11"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="8"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="hj6-mM-ZI8" secondAttribute="bottom" constant="5" id="4E8-dU-fdV"/>
+                                                <constraint firstItem="Gep-QD-3o4" firstAttribute="top" secondItem="YBD-Q8-32l" secondAttribute="bottom" constant="5" id="6sJ-wn-lKV"/>
+                                                <constraint firstItem="Gep-QD-3o4" firstAttribute="leading" secondItem="jt0-Lj-uKt" secondAttribute="leading" constant="8" id="9xj-PL-rpH"/>
+                                                <constraint firstItem="YBD-Q8-32l" firstAttribute="top" secondItem="jt0-Lj-uKt" secondAttribute="top" constant="5" id="FED-JD-isg"/>
+                                                <constraint firstItem="YBD-Q8-32l" firstAttribute="leading" secondItem="jt0-Lj-uKt" secondAttribute="leading" constant="5" id="Kby-D1-iCi"/>
+                                                <constraint firstItem="hj6-mM-ZI8" firstAttribute="top" secondItem="Gep-QD-3o4" secondAttribute="bottom" constant="5" id="YJ2-Dk-ZGl"/>
+                                                <constraint firstAttribute="trailing" secondItem="Gep-QD-3o4" secondAttribute="trailing" constant="5" id="as7-Ik-TqF"/>
+                                                <constraint firstItem="hj6-mM-ZI8" firstAttribute="top" secondItem="Gep-QD-3o4" secondAttribute="bottom" constant="5" id="eTO-Hz-wsN"/>
+                                                <constraint firstItem="Gep-QD-3o4" firstAttribute="top" secondItem="YBD-Q8-32l" secondAttribute="bottom" constant="5" id="mpl-IW-jyl"/>
+                                                <constraint firstAttribute="trailing" secondItem="hj6-mM-ZI8" secondAttribute="trailing" constant="5" id="o0a-Xr-Ge8"/>
+                                                <constraint firstAttribute="trailing" secondItem="YBD-Q8-32l" secondAttribute="trailing" constant="5" id="rdV-bI-Nwi"/>
+                                                <constraint firstItem="hj6-mM-ZI8" firstAttribute="leading" secondItem="jt0-Lj-uKt" secondAttribute="leading" constant="5" id="xSR-81-dVk"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="182" height="236"/>
+                                        <connections>
+                                            <outlet property="conteinerView" destination="jt0-Lj-uKt" id="0ww-S5-XkA"/>
+                                            <outlet property="descriptionLabel" destination="hj6-mM-ZI8" id="Z9P-bW-Izj"/>
+                                            <outlet property="imageView" destination="YBD-Q8-32l" id="YXo-vQ-okl"/>
+                                            <outlet property="titleLabel" destination="Gep-QD-3o4" id="7ML-J6-FQC"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A2e-2g-P9I" secondAttribute="trailing" id="2Ht-hf-gOj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A2e-2g-P9I" secondAttribute="bottom" id="Ap7-eK-jm4"/>
+                            <constraint firstItem="A2e-2g-P9I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RFq-3y-Hzc"/>
+                            <constraint firstItem="A2e-2g-P9I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wEY-O1-suy"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="13.846153846153845" y="-2.1327014218009479"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
