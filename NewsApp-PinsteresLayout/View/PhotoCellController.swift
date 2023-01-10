@@ -30,10 +30,11 @@ class PhotoCellController: UICollectionViewCell {
                 
                 if let imgUrl = URL(string: newsResult.urlToImage) {
                     imageView.imageFrom(url: imgUrl)
+                    titleLabel.text = newsResult.title
+                    descriptionLabel.text = newsResult.description
+                    
                 }
                 
-                titleLabel.text = newsResult.title
-                descriptionLabel.text = newsResult.description
             }
         }
     }
