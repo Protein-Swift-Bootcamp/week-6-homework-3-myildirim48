@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UICollectionViewController {
+class ViewController: UICollectionViewController {
     
     var newsOnUi : [NewsResult] = []
     
@@ -17,6 +17,10 @@ final class ViewController: UICollectionViewController {
         
         loadData()
         collectionView.reloadData()
+        
+        if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
+            layout.delegate = self
+        }
     }
     
     
@@ -80,6 +84,32 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
+}
+
+//Pinterest Layout
+extension ViewController: PinterestLayoutDelegate {
+    func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath: IndexPath, with width: CGFloat) -> CGFloat {
+        
+            let post = newsOnUi[indexPath.item]
+            let topPadding = CGFloat(8)
+            let bottomPadding = CGFloat(8)
+        let totalText = post.title + post.description
+        let captionHeight = self.height(for: totalText, width: width)
+            let height = topPadding + captionHeight + topPadding  + bottomPadding + 100
+            
+            return height
+     
+    }
+    
+    func height(for text: String, width: CGFloat) -> CGFloat
+    {
+        let nsstring = NSString(string: text)
+        let maxHeight = CGFloat(500)
+        let boundingRect = nsstring.boundingRect(with: CGSize(width: width, height: maxHeight), options: .usesLineFragmentOrigin, context: nil)
+        return ceil(boundingRect.height)
+    }
+    
+    
 }
 
 
