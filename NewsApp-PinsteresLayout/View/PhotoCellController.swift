@@ -19,9 +19,11 @@ class PhotoCellController: UICollectionViewCell {
         super.awakeFromNib()
         
         imageView.layer.cornerRadius = 10
-//        conteinerView.layer.cornerRadius = 10
-//        conteinerView.dropShadow(color: .systemGray4, offSet: .init(width: 3, height: 3))
-//        conteinerView.layer.masksToBounds = true
+        
+        conteinerView.layer.cornerRadius = 10
+        conteinerView.layer.masksToBounds = true
+        
+        
     }
     
     var newsResult: NewsResult? {

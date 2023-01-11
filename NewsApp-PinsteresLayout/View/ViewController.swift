@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class ViewController: UICollectionViewController {
     
     var newsOnUi : [NewsResult] = []
@@ -14,7 +13,7 @@ class ViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        collectionView?.contentInset = UIEdgeInsets(top: 12, left: 4, bottom: 12, right: 4)
         loadData()
         
         if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
@@ -56,8 +55,6 @@ extension ViewController{
         if let url = URL(string: newsOnUi[indexPath.item].url) {
             CustomeBroweser(controller: UIWindow.key?.rootViewController).open(openURL: url)
         }
-        
-print(newsOnUi[indexPath.item].url)
     }
     
 }
@@ -68,22 +65,25 @@ print(newsOnUi[indexPath.item].url)
 extension ViewController: PinterestLayoutDelegate {
     func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath: IndexPath, with width: CGFloat) -> CGFloat {
         
-            let post = newsOnUi[indexPath.item]
-            let topPadding = CGFloat(8)
-            let bottomPadding = CGFloat(8)
+        let post = newsOnUi[indexPath.item]
         let totalText = post.title + post.description
-        let captionHeight = self.height(for: totalText, width: width)
-            let height = topPadding + captionHeight + topPadding  + bottomPadding + 270
-            
-            return height
-     
+        
+        let topPadding = CGFloat(8)
+        let bottomPadding = CGFloat(12)
+        let captionFont = UIFont.systemFont(ofSize: 14)
+        let captionHeight = self.height(for: totalText, with: captionFont, width: width)
+        let height = topPadding + captionHeight + topPadding + bottomPadding
+        
+        return height
+        
     }
     
-    func height(for text: String, width: CGFloat) -> CGFloat
+    func height(for text: String, with font: UIFont, width: CGFloat) -> CGFloat
     {
         let nsstring = NSString(string: text)
-        let maxHeight = CGFloat(550)
-        let boundingRect = nsstring.boundingRect(with: CGSize(width: width, height: maxHeight), options: .usesLineFragmentOrigin, context: nil)
+        let maxHeight = CGFloat(MAXFLOAT)
+        let textAttributes = [NSAttributedString.Key.font : font]
+        let boundingRect = nsstring.boundingRect(with: CGSize(width: width, height: maxHeight), options: .usesLineFragmentOrigin, attributes: textAttributes, context: nil)
         return ceil(boundingRect.height)
     }
     

@@ -10,8 +10,6 @@ import UIKit
 
 protocol PinterestLayoutDelegate: AnyObject
 {
-//    func collectionView(collectionView: UICollectionView, heightForPhotoAt indexPath: IndexPath, with width: CGFloat) -> CGFloat
-    
     func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath:IndexPath, with width: CGFloat) -> CGFloat
 }
 
@@ -48,15 +46,16 @@ class PinterestLayout: UICollectionViewLayout
                 // calculate the frame
                 let width = columnWidth - cellPadding * 2
 
-//                let photoHeight: CGFloat = (delegate?.collectionView(collectionView: collectionView!, heightForPhotoAt: indexPath, with: width))!
+                let photoHeight: CGFloat = 189
                 let captionHeight: CGFloat = (delegate?.collectionView(collectionView: collectionView!, heightForCaptionAt: indexPath, with: width))!
                 
-                let height: CGFloat = cellPadding  + captionHeight + cellPadding
+                let height: CGFloat = cellPadding + photoHeight + captionHeight + cellPadding
                 let frame = CGRect(x: xOffsets[column], y: yOffsets[column], width: columnWidth, height: height)
                 let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
                 
                 // create layout attributes
                 let attributes = PinterestLayoutAttributes(forCellWith: indexPath)
+                attributes.photoHeight = photoHeight
                 attributes.frame = insetFrame
                 attributesCache.append(attributes)
                 
@@ -90,6 +89,9 @@ class PinterestLayout: UICollectionViewLayout
         return layoutAttributes
     }
 }
+// UICollectionViewFlowLayout
+// abstract
+
 class PinterestLayoutAttributes: UICollectionViewLayoutAttributes
 {
     var photoHeight: CGFloat = 0.0
@@ -110,3 +112,16 @@ class PinterestLayoutAttributes: UICollectionViewLayoutAttributes
         return false
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
