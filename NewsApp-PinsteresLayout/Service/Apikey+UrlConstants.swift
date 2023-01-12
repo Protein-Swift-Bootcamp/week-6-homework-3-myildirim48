@@ -13,7 +13,7 @@ struct secretKey {
 
 let topHeadlines : String = "top-headlines?"
 let country : String = "country=tr&"
-
+let category : String = "&category="
 let apiKey : String = "apiKey="
 
 let photoCellid : String = "photoCellID"

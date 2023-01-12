@@ -17,6 +17,19 @@ class Network {
         fetchGeneric(urlString: Endpoints.topHeadlineTR.stringUrl, completion: completion)
     }
     
+    func fetchSport(completion:@escaping(News?,Error?)->()) {
+        fetchGeneric(urlString: Endpoints.sport.stringUrl, completion: completion)
+    }
+    func fetchHealth(completion:@escaping(News?,Error?)->()) {
+        fetchGeneric(urlString: Endpoints.health.stringUrl, completion: completion)
+    }
+    func fetchScience(completion:@escaping(News?,Error?)->()) {
+        fetchGeneric(urlString: Endpoints.science.stringUrl, completion: completion)
+    }
+    func fetchBussines(completion:@escaping(News?,Error?)->()) {
+        fetchGeneric(urlString: Endpoints.bussines.stringUrl, completion: completion)
+    }
+    
     
     func fetchGeneric<T:Decodable>(urlString:String, completion: @escaping (T?,Error?) -> ()) {
         guard let url = URL(string: urlString) else { return }

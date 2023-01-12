@@ -11,12 +11,29 @@ enum Endpoints {
         return "https://newsapi.org/v2/"
     }
 case topHeadlineTR
-
+case sport
+case science
+case health
+case bussines
     
+    var toplines : String {
+        urlBase + topHeadlines + country
+    }
+    var apikeylast : String {
+        apiKey + secretKey.key
+    }
     var stringUrl : String {
         switch self {
         case .topHeadlineTR :
-            return urlBase + topHeadlines + country + apiKey + secretKey.key
+            return toplines + apiKey + secretKey.key
+        case .sport :
+            return toplines + category + "sport" + apikeylast
+        case .science :
+            return toplines + category + "science" + apikeylast
+        case .health:
+            return toplines + category + "health" + apikeylast
+        case .bussines :
+            return toplines + category + "business" + apikeylast
         }
     }
 

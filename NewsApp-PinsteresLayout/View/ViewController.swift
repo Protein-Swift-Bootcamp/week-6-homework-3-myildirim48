@@ -8,21 +8,27 @@
 import UIKit
 class ViewController: UICollectionViewController {
     
+    @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
     var newsOnUi : [NewsResult] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         collectionView?.contentInset = UIEdgeInsets(top: 12, left: 4, bottom: 12, right: 4)
-        loadData()
         
+        loadData()
         if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
         }
+        
     }
-    
+
+
     
     fileprivate func loadData(){
+        
+        
+        
         Network.shared.fetchData { newsData, err in
             if let err {
                 print("error while fetching data",err.localizedDescription)
@@ -37,7 +43,66 @@ class ViewController: UICollectionViewController {
             }
         }
     }
-
+    fileprivate func loadSportData(){
+        Network.shared.fetchSport { newsData, err in
+            if let err {
+                print("error while fetching data",err.localizedDescription)
+            }
+            if let newsData {
+              
+                DispatchQueue.main.async {
+                    self.newsOnUi = newsData.articles
+                    self.collectionView.reloadData()
+                }
+                
+            }
+        }
+    }
+    fileprivate func loadhealthData(){
+        Network.shared.fetchHealth { newsData, err in
+            if let err {
+                print("error while fetching data",err.localizedDescription)
+            }
+            if let newsData {
+              
+                DispatchQueue.main.async {
+                    self.newsOnUi = newsData.articles
+                    self.collectionView.reloadData()
+                }
+                
+            }
+        }
+    }
+    fileprivate func loadScienceData(){
+        Network.shared.fetchScience { newsData, err in
+            if let err {
+                print("error while fetching data",err.localizedDescription)
+            }
+            if let newsData {
+              
+                DispatchQueue.main.async {
+                    self.newsOnUi = newsData.articles
+                    self.collectionView.reloadData()
+                }
+                
+            }
+        }
+    }
+    fileprivate func loadBussinesData(){
+        Network.shared.fetchBussines { newsData, err in
+            if let err {
+                print("error while fetching data",err.localizedDescription)
+            }
+            if let newsData {
+              
+                DispatchQueue.main.async {
+                    self.newsOnUi = newsData.articles
+                    self.collectionView.reloadData()
+                }
+                
+            }
+        }
+    }
 }
 
 //Collection view datasource
@@ -54,6 +119,17 @@ extension ViewController{
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let url = URL(string: newsOnUi[indexPath.item].url) {
             CustomeBroweser(controller: UIWindow.key?.rootViewController).open(openURL: url)
+        }
+    }
+    
+    //Header
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if kind == UICollectionView.elementKindSectionHeader {
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCellid", for: indexPath) as! CategoryHeader
+            return headerView
+        }else {
+            return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCellid", for: indexPath)
         }
     }
     

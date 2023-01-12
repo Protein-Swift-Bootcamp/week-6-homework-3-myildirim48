@@ -20,6 +20,7 @@
 		749BC10C296D9AAD008A3976 /* PhotoCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BC10B296D9AAD008A3976 /* PhotoCellController.swift */; };
 		749BC10F296DA11C008A3976 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BC10E296DA11C008A3976 /* UIImageView+Extensions.swift */; };
 		749BC111296DA140008A3976 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BC110296DA140008A3976 /* UIView+Extensions.swift */; };
+		74A5AB1F29703F210089A9EE /* CategoryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5AB1E29703F210089A9EE /* CategoryHeader.swift */; };
 		74BA9F5F296E0B780037A9ED /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BA9F5E296E0B780037A9ED /* PinterestLayout.swift */; };
 		74BA9F63296E19E40037A9ED /* CustomeBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BA9F62296E19E40037A9ED /* CustomeBrowser.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		749BC10B296D9AAD008A3976 /* PhotoCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellController.swift; sourceTree = "<group>"; };
 		749BC10E296DA11C008A3976 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		749BC110296DA140008A3976 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		74A5AB1E29703F210089A9EE /* CategoryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeader.swift; sourceTree = "<group>"; };
 		74BA9F5E296E0B780037A9ED /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		74BA9F62296E19E40037A9ED /* CustomeBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeBrowser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 				749BC0ED296D6AAF008A3976 /* Main.storyboard */,
 				749BC0F2296D6AB0008A3976 /* LaunchScreen.storyboard */,
 				74BA9F5E296E0B780037A9ED /* PinterestLayout.swift */,
+				74A5AB1E29703F210089A9EE /* CategoryHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A5AB1F29703F210089A9EE /* CategoryHeader.swift in Sources */,
 				749BC10F296DA11C008A3976 /* UIImageView+Extensions.swift in Sources */,
 				749BC100296D6B1A008A3976 /* NewsModel.swift in Sources */,
 				749BC0EC296D6AAF008A3976 /* ViewController.swift in Sources */,

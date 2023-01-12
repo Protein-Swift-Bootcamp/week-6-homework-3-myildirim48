@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oz8-uc-rq4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rsT-zw-jPO">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewLayout key="collectionViewLayout" id="tbG-dB-wMd" customClass="PinterestLayout" customModule="NewsApp_PinsteresLayout" customModuleProvider="target"/>
+                        <collectionViewLayout key="collectionViewLayout" id="GBn-6L-u3L" customClass="PinterestLayout" customModule="NewsApp_PinsteresLayout" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCellID" id="S5u-Wc-7mD" customClass="PhotoCellController" customModule="NewsApp_PinsteresLayout" customModuleProvider="target">
                                 <rect key="frame" x="95" y="0.0" width="200" height="250"/>
@@ -82,8 +82,30 @@
                             <outlet property="dataSource" destination="oz8-uc-rq4" id="3ml-Fm-Fva"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="OD4-EO-7om">
+                        <nil key="title"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PrS-sY-l8C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-136.92307692307691" y="-47.630331753554501"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZM6-2d-ZWj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rsT-zw-jPO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NBJ-dj-jMi">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance" backgroundEffect="systemUltraThinMaterialLight"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oz8-uc-rq4" kind="relationship" relationship="rootViewController" id="x23-Kz-nnu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23O-qg-iMc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1066.1538461538462" y="-47.630331753554501"/>
         </scene>
