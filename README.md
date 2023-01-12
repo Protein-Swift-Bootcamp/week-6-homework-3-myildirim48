@@ -3,9 +3,9 @@
 - This is a basic news app for pinterest layout
 
  #### Network
-- API : [News Api(https://newsapi.org/docs)
+- API : [News Api(https://newsapi.org/docs)]
 
  #### Gif
  
- ![](https://github.com/Protein-Swift-Bootcamp/week-6-homework-3-myildirim48/blob/main/RickAndMorty.gif?raw=true)
+ ![](https://github.com/Protein-Swift-Bootcamp/week-6-homework-3-myildirim48/blob/main/Pinterest.gif)
 
